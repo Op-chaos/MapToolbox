@@ -1,0 +1,20 @@
+{
+    "name": "AutoCore.MapToolbox.Editor",
+    "rootNamespace": "",
+    "references": [
+        "AutoCore.MapToolbox",
+        "Unity.Collections",
+        "Unity.Mathematics"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
