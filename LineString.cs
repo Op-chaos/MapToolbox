@@ -30,6 +30,12 @@ namespace Packages.MapToolbox
             dashed
         }
         public SubType subType = SubType.solid;
+        public enum LineObject
+        {
+            Curb,
+            Pole
+        }
+        public LineObject lineObject = LineObject.Curb;
         protected override void Start()
         {
             base.Start();

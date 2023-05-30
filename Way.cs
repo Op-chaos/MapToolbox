@@ -189,6 +189,7 @@ namespace Packages.MapToolbox
                 if (line_string)
                 {
                     way.AppendChild(doc.AddTag("type", "line_string"));
+                    way.AppendChild(doc.AddTag("lineObject", line_string.lineObject.ToString()));
                 }
                 var ploygon = GetComponent<Ploygon>();
                 if (ploygon)
