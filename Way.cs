@@ -195,6 +195,9 @@ namespace Packages.MapToolbox
                 {
                     way.AppendChild(doc.AddTag("type", "ploygon"));
                     way.AppendChild(doc.AddTag("roadobject", ploygon.roadobject.ToString()));
+                    if (ploygon.roadobject == ploygon.roadsurfface_mark) {
+                        way.AppendChild(doc.AddTag("marktype", ploygon.markType.ToString()));
+                    }
                 }
                 var stop_line = GetComponent<StopLine>();
                 if (stop_line)

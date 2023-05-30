@@ -32,6 +32,13 @@ namespace Packages.MapToolbox
             roadsurfface_mark
         }
         public RoadObject roadobject = RoadObject.crosswalk;
+        public enum MarkType
+        {
+            Normal,
+            Arrow,
+            Text
+        }
+        public MarkType markType = MarkType.Normal;
         protected override void Start()
         {
             base.Start();
