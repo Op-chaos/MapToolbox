@@ -184,6 +184,38 @@ namespace Packages.MapToolbox
                         default:
                             break;
                     }
+                    switch (lanelet.category)
+                    {
+                        case Lanelet.Category.Motor_lane:
+                            relation.AppendChild(doc.AddTag("category", "motor_lane"));
+                            break;
+                        case Lanelet.Category.No_motor_lane:
+                            relation.AppendChild(doc.AddTag("category", "no_motor_lane"));
+                            break;
+                        case Lanelet.Category.Bus_lane:
+                            relation.AppendChild(doc.AddTag("category", "bus_lane"));
+                            break;
+                        default:
+                            break;
+                    }
+                    switch (lanelet.left_boundary_direct)
+                    {
+                        case Lanelet.Boundary_direct.Same:
+                            relation.AppendChild(doc.AddTag("left_boundary_direct", "same"));
+                            break;
+                        case Lanelet.Boundary_direct.Opposity:
+                            relation.AppendChild(doc.AddTag("left_boundary_direct", "opposity"));
+                            break;
+                    }
+                    switch (lanelet.right_boundary_direct)
+                    {
+                        case Lanelet.Boundary_direct.Same:
+                            relation.AppendChild(doc.AddTag("right_boundary_direct", "same"));
+                            break;
+                        case Lanelet.Boundary_direct.Opposity:
+                            relation.AppendChild(doc.AddTag("right_boundary_direct", "opposity"));
+                            break;
+                    }
                     relation.AppendChild(doc.AddTag("speed_limit", string.Format("{0}km/h", lanelet.speed_limit)));
                     relation.AppendChild(doc.AddMember("way", lanelet.left.name, "left"));
                     relation.AppendChild(doc.AddMember("way", lanelet.right.name, "right"));

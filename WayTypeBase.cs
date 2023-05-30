@@ -84,7 +84,7 @@ namespace Packages.MapToolbox
         protected virtual Vector3 GetClickedPoint() => GetClickedPoint(Vector3.zero);
         protected virtual Vector3 GetClickedPoint(Vector3 offset)
         {
-            var point = Utils.MousePointInSceneView;
+            var point = Utils.MousePointInSceneView;  // todo
             point.y = Utils.GetHeight(point);
             return point + offset;
         }
