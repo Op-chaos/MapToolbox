@@ -75,7 +75,22 @@ namespace Packages.MapToolbox
             Left,
             Right
         }
-        public TurnDirection turnDirection = TurnDirection.Null;
+        public TurnDirection turnDirection = TurnDirection.Straight;
+        public enum Category
+        {
+            Null,
+            Motor_lane,
+            No_motor_lane,
+            Bus_lane
+        }
+        public Category category = Category.Motor_lane;
+        public enum Boundary_direct
+        {
+            Same,
+            Opposity
+        }
+        public Boundary_direct left_boundary_direct = Boundary_direct.Same;
+        public Boundary_direct right_boundary_direct = Boundary_direct.Same;
         internal Lanelet AddNew() => AddNew(Lanelet2Map);
         internal static Lanelet AddNew(Lanelet2Map map)
         {
@@ -98,7 +113,7 @@ namespace Packages.MapToolbox
         }
         private void AddPoints()
         {
-            var centerPoint = Utils.MousePointInSceneView;
+            var centerPoint = Utils.MousePointInSceneView;  // todo
             centerPoint.y = Utils.GetHeight(centerPoint);
             if (CenterPoints.Count > 1)
             {
